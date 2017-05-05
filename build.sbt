@@ -1,8 +1,8 @@
 import sbt.Keys.{libraryDependencies, _}
 import Dependencies._
 
-organization := "com.adrentech"
-name := "play-akka-common"
+organization := "pl.why"
+name := "common"
 
 version := "1.0"
 scalaVersion := "2.11.8"
