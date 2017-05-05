@@ -1,0 +1,17 @@
+syntax = "proto3";
+option java_package = "pl.why.common.proto";
+option optimize_for = SPEED;
+
+message ResumableOffset {
+    string projectionId = 1;
+    string uuid = 2;
+    bool deleted = 3;
+}
+
+message ResumableProjectionCreated {
+    ResumableOffset offset = 1;
+}
+
+message OffsetUpdated {
+    ResumableOffset offset = 1;
+}
