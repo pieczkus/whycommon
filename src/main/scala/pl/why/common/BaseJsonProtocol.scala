@@ -2,9 +2,10 @@ package pl.why.common
 
 import java.util.Date
 
+import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
 import spray.json._
 
-trait BaseJsonProtocol extends DefaultJsonProtocol {
+trait BaseJsonProtocol extends SprayJsonSupport with DefaultJsonProtocol {
 
   implicit object DateFormat extends JsonFormat[Date] {
     def write(date: Date): JsValue = JsNumber(date.getTime)
