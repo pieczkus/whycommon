@@ -2,7 +2,7 @@ import sbt._
 import Keys._
 
 object Dependencies {
-  val akkaVersion = "2.5.0"
+  val akkaVersion = "2.5.1"
   val akkaCluster = "com.typesafe.akka" %% "akka-cluster" % akkaVersion
   val akkaClusterTools = "com.typesafe.akka" %% "akka-cluster-tools" % akkaVersion
   val akkaClusterSharding = "com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion
@@ -17,15 +17,8 @@ object Dependencies {
   val elastic4sXpack = "com.sksamuel.elastic4s" %% "elastic4s-xpack-security" % elastic4sVersion
 
   val logbackClassic = "ch.qos.logback" % "logback-classic" % "1.1.3"
-  val jwt = "com.nimbusds" % "nimbus-jose-jwt" % "4.7"
-
-  val json4sVersion = "3.2.9"
-  val json4sNative = "org.json4s" %% "json4s-native" % json4sVersion
-  val json4sExt = "org.json4s" %% "json4s-ext" % json4sVersion
 
   val proto = "com.trueaccord.scalapb" %% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion
-
-  val bcrypt = "com.github.t3hnar" % "scala-bcrypt_2.11" % "2.5"
 
   val jodaConvert = "org.joda" % "joda-convert" % "1.8.1"
 

@@ -32,7 +32,10 @@ class ProtobufDataModelAdapter extends EventAdapter {
       case m: GeneratedMessage =>
         //Reflect to get the companion for the domain class that was serialized and then
         //use that to perform the conversion back into the domain model
-        val reader = Class.forName(manifest + "$").getField("MODULE$").get(null).asInstanceOf[DataModelReader]
+        val reader = Thread.currentThread().getContextClassLoader
+          .loadClass(manifest + "$").getField("MODULE$").get(null).asInstanceOf[DataModelReader]
+        //        val reader = Class.forName(manifest).asInstanceOf[DataModelReader]
+        //        val reader = Thread.currentThread().getContextClassLoader.loadClass(manifest).asInstanceOf[DataModelReader]
         reader.
           fromDataModel.
           lift(m).
