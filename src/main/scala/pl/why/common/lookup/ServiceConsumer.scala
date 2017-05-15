@@ -33,9 +33,8 @@ trait ServiceConsumer extends ApiResponseJsonProtocol {
     import context.dispatcher
     for {
       resp <- http.singleRequest(request).flatMap(successOnly(request))
-      entity <- Unmarshal(resp.entity).to[ApiResponse[T]]
-      if entity.response.isDefined
-    } yield entity.response.get
+      entity <- Unmarshal(resp.entity).to[T]
+    } yield entity
   }
 
   def successOnly(req: HttpRequest)(resp: HttpResponse): Future[HttpResponse] = {
