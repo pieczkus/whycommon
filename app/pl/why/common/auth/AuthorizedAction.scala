@@ -11,6 +11,10 @@ import scala.concurrent.{ExecutionContext, Future}
 
 case class AuthorizedRequest[A](request: Request[A]) extends WrappedRequest(request)
 
+object AuthorizedAction {
+  final val API_KEY_HEADER = "Why-Key"
+}
+
 class AuthorizedAction @Inject()(@Named("auth-service") authService: ActorRef, parser: BodyParsers.Default)(implicit ec: ExecutionContext)
   extends ActionBuilderImpl(parser) {
 
@@ -18,8 +22,6 @@ class AuthorizedAction @Inject()(@Named("auth-service") authService: ActorRef, p
   import scala.concurrent.duration._
 
   implicit val timeout = Timeout(5.seconds)
-
-  final val API_KEY_HEADER = "Why-Key"
 
   override def invokeBlock[A](request: Request[A], block: (Request[A]) => Future[Result]): Future[Result] = {
     request.headers.get("Authorization") match {
