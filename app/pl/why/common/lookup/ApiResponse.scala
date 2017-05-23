@@ -6,4 +6,6 @@ import spray.json._
 trait ApiResponseJsonProtocol extends BaseJsonProtocol {
 
   implicit val errorMessageFormat: RootJsonFormat[ErrorMessage] = jsonFormat3(ErrorMessage.apply)
+  implicit val simpleResponseFormat: RootJsonFormat[SimpleResponse] = jsonFormat1(SimpleResponse.apply)
+
 }

@@ -11,6 +11,8 @@ import scala.concurrent.Future
 
 case class ServiceLookupResult(name: String, uriOpt: Option[String])
 
+case class SimpleResponse(message: String)
+
 trait ServiceConsumer extends ApiResponseJsonProtocol {
   me: CommonActor =>
 
