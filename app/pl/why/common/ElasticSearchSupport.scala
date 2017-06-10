@@ -44,10 +44,10 @@ trait ElasticSearchSupport {
 
     //    log.info(searchDefinition.show)
 
-    val response = client.execute {
-      searchDefinition
-    }.await
-    log.warning(response.toString)
+//    val response = client.execute {
+//      searchDefinition
+//    }.await
+//    log.warning(response.toString)
 
     client.execute {
       searchDefinition
