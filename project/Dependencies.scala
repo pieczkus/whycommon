@@ -22,6 +22,10 @@ object Dependencies {
 
   val jodaConvert = "org.joda" % "joda-convert" % "1.8.1"
 
+  val json4sVersion = "3.5.2"
+  val json4sNative = "org.json4s" %% "json4s-native" % json4sVersion
+  val json4sExt = "org.json4s" %% "json4s-ext" % json4sVersion
+
   val akkaHttpVersion = "10.0.5"
   val akkaHttpJson = "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion
 
@@ -36,7 +40,9 @@ object Dependencies {
     akkaPersistenceCassandra,
     akkaSlf4j,
     logbackClassic,
-    akkaHttpJson
+    akkaHttpJson,
+    json4sExt,
+    json4sNative
   )
 }
 

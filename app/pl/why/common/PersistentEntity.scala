@@ -164,7 +164,7 @@ abstract class PersistentEntity[FO <: EntityFieldsObject[String, FO] : ClassTag]
     sender() ! stateResponse(respectDeleted)
   }
 
-  def snapshotAfterCount: Option[Int] = None
+  def snapshotAfterCount: Option[Int] = Some(50)
 
   private def maybeSnapshot(): Unit = {
     snapshotAfterCount.
