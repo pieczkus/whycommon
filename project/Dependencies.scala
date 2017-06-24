@@ -2,7 +2,7 @@ import sbt._
 import Keys._
 
 object Dependencies {
-  val akkaVersion = "2.5.1"
+  val akkaVersion = "2.5.3"
   val akkaCluster = "com.typesafe.akka" %% "akka-cluster" % akkaVersion
   val akkaClusterTools = "com.typesafe.akka" %% "akka-cluster-tools" % akkaVersion
   val akkaClusterSharding = "com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion
