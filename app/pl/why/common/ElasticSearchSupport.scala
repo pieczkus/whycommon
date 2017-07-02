@@ -23,7 +23,7 @@ trait ElasticSearchSupport {
   val esSettings = ElasticSearchSettings(context.system)
 
   val settings: Settings = Settings.builder()
-    .put("cluster.name", "arrsearchcluster")
+    .put("cluster.name", "whysearchcluster")
     .put("xpack.security.user", esSettings.username + ":" + esSettings.password)
     .build()
   val client = XPackElasticClient(settings, ElasticsearchClientUri(esSettings.host, esSettings.port))
