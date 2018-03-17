@@ -2,13 +2,13 @@ import sbt._
 import Keys._
 
 object Dependencies {
-  val akkaVersion = "2.5.3"
+  val akkaVersion = "2.5.11"
   val akkaCluster = "com.typesafe.akka" %% "akka-cluster" % akkaVersion
   val akkaClusterTools = "com.typesafe.akka" %% "akka-cluster-tools" % akkaVersion
   val akkaClusterSharding = "com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion
   val akkaRemote = "com.typesafe.akka" %% "akka-remote" % akkaVersion
   val akkaPersistence = "com.typesafe.akka" %% "akka-persistence" % akkaVersion
-  val akkaPersistenceCassandra = "com.typesafe.akka" %% "akka-persistence-cassandra" % "0.51"
+  val akkaPersistenceCassandra = "com.typesafe.akka" %% "akka-persistence-cassandra" % "0.83"
   val akkaPersistenceQuery = "com.typesafe.akka" %% "akka-persistence-query" % akkaVersion
   val akkaSlf4j = "com.typesafe.akka" %% "akka-slf4j" % akkaVersion
 
@@ -16,7 +16,7 @@ object Dependencies {
   val elastic4s = "com.sksamuel.elastic4s" %% "elastic4s-core" % elastic4sVersion
   val elastic4sXpack = "com.sksamuel.elastic4s" %% "elastic4s-xpack-security" % elastic4sVersion
 
-  val logbackClassic = "ch.qos.logback" % "logback-classic" % "1.1.3"
+  val logbackClassic = "ch.qos.logback" % "logback-classic" % "1.2.3"
 
   val proto = "com.trueaccord.scalapb" %% "scalapb-runtime" % com.trueaccord.scalapb.compiler.Version.scalapbVersion
 
